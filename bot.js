@@ -1,6 +1,6 @@
 require('dotenv').config()
-const { ask } = require("./ai.js"); //import the "ask" function from the "ai.js" file
-const token = process.env.BOT_TOKEN; //Token that you saved in step 5 of this tutorial
+const { ask } = require("./ai.js");
+const token = process.env.BOT_TOKEN;
 const {Client, Intents} = require("discord.js");
 const { start } = require('repl');
 const client = new Client({
@@ -10,12 +10,19 @@ const client = new Client({
     ]
 });
 client.on("ready", () =>{
-    console.log("The AI bot is online"); //message when bot is online
+    console.log("The AI bot is online");
+    client.user.setActivity("Type !setup to create chat channel");
 });
 client.on("message", async (message) => {
     if (message.author.bot) return;
-        const prompt = message.content; //remove the exclamation mark from the message
-        const answer = await ask(prompt); //prompt GPT-3
-        message.channel.send(answer); //reply to Discord with answer from GPT-3
+    if (message.content.includes("!setup")) {
+        if(!message.guild.channels.cache.find(channel => channel.name === 'pieckbot-chat')){
+         message.guild.channels.create('pieckbot-chat')
+       }
+     }
+     if (message.channel.name != 'pieckbot-chat') return;
+    const prompt = message.content;
+    const answer = await ask(prompt);
+    message.channel.send(answer);
 });
 client.login(process.env.BOT_TOKEN);
