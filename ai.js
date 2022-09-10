@@ -20,6 +20,8 @@ let answer = response.data.choices[0].text;
 prompt +=  `Pieck: ${answer}\n`;
 answer = answer.replace('Pieck: ', '')
 answer = answer.replace('Pieck:', '')
+answer = answer.replace('Pieck:\n\n', '')
+answer = answer.replace('Pieck:\n', '')
 return answer;
 }
 

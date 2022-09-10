@@ -1,6 +1,7 @@
 # Discord-Chatbot
-Discord integration of gpt3 chatbot
 
-Run npm install to build
+Discord integration of gpt-3 chatbot to act as the character Pieck Finger from Attack on Titan
 
-Run npm start to deploy locally
+npm i to build locally
+
+npm start to run locally
