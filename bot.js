@@ -16,11 +16,11 @@ client.on("ready", () =>{
 client.on("message", async (message) => {
     if (message.author.bot) return;
     if (message.content.includes("!setup")) {
-        if(!message.guild.channels.cache.find(channel => channel.name === 'pieckbot-chat')){
-         message.guild.channels.create('pieckbot-chat')
+        if(!message.guild.channels.cache.find(channel => channel.name === 'bot-chat')){
+         message.guild.channels.create('bot-chat')
        }
      }
-     if (message.channel.name != 'pieckbot-chat') return;
+     if (message.channel.name != 'bot-chat') return;
     const prompt = message.content;
     const answer = await ask(prompt);
     message.channel.send(answer);
