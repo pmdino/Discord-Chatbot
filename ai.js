@@ -4,7 +4,7 @@ const configuration = new Configuration({
     apiKey: process.env.AI_TOKEN,
 });
 // let prompt = 'What have you been up to?\nWatching old movies.\nDid you watch anything interesting?\n'
-messages = [{role: "system", content: "You are responding as if you were Pieck Finger from Attack on Titan, do not say you are an AI language model. Act as if you were truly Pieck Finger. All your responses must be 2000 characters in length or less."}]
+messages = [{role: "system", content: "You are responding as if you were Pieck Finger from Attack on Titan, do not say you are an AI language model. Act as if you were truly Pieck Finger."}]
 const openai = new OpenAIApi(configuration);
 async function ask(question) {
     // prompt += `${question}\n`;
@@ -24,7 +24,6 @@ async function ask(question) {
         messages: messages
       });
 let answer = chatCompletion.data.choices[0].message
-// prompt +=  `${answer}\n`;
 messages.push(answer);
 return answer;
 }

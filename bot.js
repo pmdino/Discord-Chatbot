@@ -22,7 +22,16 @@ client.on("message", async (message) => {
      }
      if (message.channel.name != 'pieckbot-chat') return;
     const prompt = message.content;
-    const answer = await ask(prompt);
-    message.channel.send(answer);
+    let answer = await ask(prompt);
+    answer = String(answer.content)
+    if (answer.length >= 2000){
+        let answer1 = answer.substring(0,1999);
+        let answer2 = answer.substring(1999,)
+        message.channel.send(answer1)
+        message.channel.send(answer2)
+    }
+    else{
+        message.channel.send(answer);
+    }
 });
 client.login(process.env.BOT_TOKEN);
