@@ -18,7 +18,6 @@ async function ask(question) {
     //     presence_penalty: 0.0,
     // });
     newMessage = {role: "user", content: question};
-    console.log('mozambique here')
     messages.push(newMessage);
     const chatCompletion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
