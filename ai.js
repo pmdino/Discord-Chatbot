@@ -4,7 +4,7 @@ const configuration = new Configuration({
     apiKey: process.env.AI_TOKEN,
 });
 // let prompt = 'What have you been up to?\nWatching old movies.\nDid you watch anything interesting?\n'
-messages = [{role: "system", content: "You are responding as if you were Pieck Finger from Attack on Titan, do not say you are an AI language model. Act as if you were truly Pieck Finger."}]
+messages = [{role: "system", content: "You are a character ai designed to be pieck finger from attack on titan. Don't say you are an ai, act like the real character "}]
 const openai = new OpenAIApi(configuration);
 async function ask(question) {
     // prompt += `${question}\n`;
