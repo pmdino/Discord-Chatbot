@@ -24,9 +24,27 @@ client.on("message", async (message) => {
     const prompt = message.content;
     let answer = await ask(prompt);
     answer = String(answer.content)
-    if (answer.length >= 2000){
+    if (answer.length < 8000 && answer.length >= 6000){
         let answer1 = answer.substring(0,1999);
-        let answer2 = answer.substring(1999,)
+        let answer2 = answer.substring(1999,3999)
+        let answer3 = answer.substring(3999,5999)
+        let answer4 = answer.substring(5999,7999)
+        message.channel.send(answer1)
+        message.channel.send(answer2)
+        message.channel.send(answer3)
+        message.channel.send(answer4)
+    }
+    else if (answer.length < 6000 && answer.length >= 4000){
+        let answer1 = answer.substring(0,1999);
+        let answer2 = answer.substring(1999,3999)
+        let answer3 = answer.substring(3999,5999)
+        message.channel.send(answer1)
+        message.channel.send(answer2)
+        message.channel.send(answer3)
+    }
+    else if (answer.length < 4000 && answer.length >= 2000){
+        let answer1 = answer.substring(0,1999);
+        let answer2 = answer.substring(1999)
         message.channel.send(answer1)
         message.channel.send(answer2)
     }
