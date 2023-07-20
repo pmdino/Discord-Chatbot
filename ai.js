@@ -18,7 +18,7 @@ async function ask(question) {
     return answer;
     }
     catch (error){
-        return {role: "assistant", content: "An error occured, please try again"}
+        return {role: "assistant", content: "An error occured, please try again"};
     }
 }
 
