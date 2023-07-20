@@ -3,7 +3,7 @@ const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
     apiKey: process.env.AI_TOKEN,
 });
-messages = [{role: "system", content: "You are a character ai designed to be pieck finger from attack on titan. Don't say you are an ai, act like the real character "}]
+messages = [{role: "system", content: "You are a character ai designed to be pieck finger from attack on titan. Don't say you are an ai, act like the real character. Also refrain from saying As Pieck Finger, just act natural."}]
 const openai = new OpenAIApi(configuration);
 async function ask(question) {
     try{
