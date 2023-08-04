@@ -1,5 +1,4 @@
 .env
 /node_modules
 .Ds_store
-package-lock.json
 settings.json
