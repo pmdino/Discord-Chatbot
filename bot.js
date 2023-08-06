@@ -21,9 +21,7 @@ try{
             message.guild.channels.create('pieckbot-chat')
         }
         }
-        if (message.content.includes("!ignore")) {
-            
-        }
+        if (message.content.includes("!ignore")) return;
         if (message.channel.name != 'pieckbot-chat') return;
         const prompt = message.content;
         let answer = await ask(prompt);
