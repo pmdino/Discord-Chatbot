@@ -22,7 +22,7 @@ try{
         }
         }
         if (message.content.includes("!ignore")) {
-            pass
+            
         }
         if (message.channel.name != 'pieckbot-chat') return;
         const prompt = message.content;
@@ -58,6 +58,6 @@ try{
     });
 }
 catch(err){
-    pass
+    
 }
 client.login(process.env.BOT_TOKEN);
