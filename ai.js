@@ -18,8 +18,9 @@ async function ask(question) {
     return answer;
     }
     catch (error){
-        return {role: "assistant", content: "An error occured, please try again"};
+        let errormsg =  {role: "assistant", content: "An error occured, please try again"};
         const openai = new OpenAIApi(configuration);
+        return errormsg
     }
 }
 
