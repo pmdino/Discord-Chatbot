@@ -3,8 +3,8 @@ const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
     apiKey: process.env.AI_TOKEN,
 });
-messages = [{role: "system", content: "You are a character ai designed to be pieck finger from attack on titan. Don't say you are an ai, act like the real character. Also refrain from saying As Pieck Finger, just act natural."}]
-const openai = new OpenAIApi(configuration);
+messages = [{role: "system", content: "You are a character ai designed to be pieck finger from attack on titan. Don't say you are an ai, act like the real character. Also refrain from saying As Pieck Finger, just act natural. If asked 'never back down never what'? your response should be 'never give up'"}]
+let openai = new OpenAIApi(configuration);
 async function ask(question) {
     try{
         newMessage = {role: "user", content: question};
@@ -19,7 +19,7 @@ async function ask(question) {
     }
     catch (error){
         let errormsg =  {role: "assistant", content: "An error occured, please try again"};
-        const openai = new OpenAIApi(configuration);
+        let openai = new OpenAIApi(configuration);
         return errormsg
     }
 }
